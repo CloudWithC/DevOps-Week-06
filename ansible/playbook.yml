@@ -22,3 +22,18 @@
         name: nginx
         state: started
         enabled: true
+
+    - name: Deploy application page
+      copy:
+        content: |
+          <html>
+          <head>
+              <title>DevOps Week 6</title>
+          </head>
+          <body>
+              <h1>Application Deployed Successfully!</h1>
+              <p>Configured using Terraform and Ansible.</p>
+          </body>
+          </html>
+        dest: /var/www/html/index.html
+        mode: '0644'
